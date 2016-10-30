@@ -83,6 +83,8 @@ int main(int argc, char *argv[])
 
         ttvfs::FixPath(externalPath);
 
+        std::cout << "Add: " << internalPath << std::endl;
+
         if(MZ_FALSE == mz_zip_writer_add_file(&zip, internalPath.c_str(),
             externalPath.c_str(), NULL, 0, MZ_DEFAULT_COMPRESSION))
         {
