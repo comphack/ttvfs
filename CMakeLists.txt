@@ -29,6 +29,11 @@ ELSEIF("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MD")
 ENDIF("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
 
+if( "${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC" )
+  set( CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} /Z7" )
+  set( CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} /Z7" )
+endif()
+
 # Be sure to copy this part to your root CMakeLists.txt if you prefer to use CMake for configuring
 # instead of editing the config header directly!
 # If you edit the header, this is not necessary.
